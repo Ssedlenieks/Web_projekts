@@ -1,0 +1,57 @@
+    .flex-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+  }
+  
+  .flex-container > div {
+    display:flexbox;
+    flex-direction: row;   
+    align-items: center;
+    background-color: #3f7ce4ac;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 250px; 
+  }
+
+  
+  .flex-container > div > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  
+  .flex-container > div > img {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto; 
+
+    border-radius: 10px; 
+  }
+  
+  .flex-container > div > p {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .flex-container > div > button[type="button"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.6;
+  }
+  
+  .flex-container > div > button[type="button"]:hover {
+    background-color: #00ff08;
+  }
+  .flex-container > div:hover{
+    background-color: #3f2ce1ac;
+    transition :all 0.3s;
+    width: 133%;
+  }
