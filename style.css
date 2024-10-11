@@ -1,90 +1,218 @@
-    .flex-container {
-    display: flex;
-    justify-content: center;
-    max-width: 1000px;
-  }
-  
-  .flex-container > div {
-    display:flexbox;
-    flex-direction: row;   
-    align-items: center;
-    background-color: #3f7ce4ac;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-    width: 250px; 
-  }
-
-  
-  .flex-container > div > h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 22px;
-  }
-  
-  .flex-container > div > img {
-    width: 100px;
-    height: 100px;
-    margin: 20px auto; 
-
-    border-radius: 10px; 
-  }
-  
-  .flex-container > div > p {
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .flex-container > div > button[type="button"] {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 0.6;
-  }
-  
-  .flex-container > div > button[type="button"]:hover {
-    background-color: #00ff08;
-  }
-  .flex-container > div:hover{
-    background-color: #3f2ce1ac;
-    transition :all 0.3s;
-    width: 133%;
-  }
-
-ul{
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-li{
-  float: left;
-
-}
-li a{
-  display: inline-block;
-  padding: 10px;
-  background-color: #fff;
-}
-li a:hover{
-  background-color: #ff3333;
-}
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode li a {
+.navbar {
   background-color: #333;
+  position: relative;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+ul.menu {
+  display: flex;
+}
+
+ul > li > button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 10px;
+  font-size: 12px;
+  border: none;
+}
+
+ul > li > button:hover {
+  background-color: #555;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+ul > li:hover .dropdown-content {
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 250px;  /* Fixed width for consistency */
+  height: 350px; /* Fixed height for consistency */
+}
+
+.flex-container > div:hover {
+  transform: scale(1.05);
+}
+
+.flex-container > div > h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.flex-container > div > img {
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.flex-container > div > p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Allow the paragraph to take available space */
+}
+
+.flex-container > div > button {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.flex-container > div > button:hover {
+  background: linear-gradient(135deg, #218838, #28a745);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: white;
+  padding: 10px;
+}
+
+@media screen and (max-width: 758px) {
+  .navbar ul {
+    display: none; /* Hide the menu by default */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar ul.show {
+    display: flex; /* Show when hamburger is clicked */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
   color: white;
 }
 
-.dark-mode li a:hover {
-  background-color: #555;
+.dark-mode .navbar {
+  background-color: #1e1e1e; /* Darker background for navbar */
+}
+
+.dark-mode ul > li > button {
+  background-color: #333; /* Dark background for buttons */
+  color: white;
+}
+
+.dark-mode ul > li > button:hover {
+  background-color: #444; /* Darker hover color */
+}
+
+.dark-mode .flex-container > div {
+  background: linear-gradient(135deg, #1f1f1f, #333); /* Dark gradient for cards */
+}
+
+.dark-mode .flex-container > div > button {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Darker gradient for buttons */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dark-mode .modal-content {
+  background-color: #333; /* Darker background for modal */
+  color: white;
+  border: 1px solid #555; /* Darker border color */
 }
