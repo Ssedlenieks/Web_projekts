@@ -83,7 +83,7 @@ ul > li:hover .dropdown-content {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  width: 250px;  /* Fixed width for consistency */
+  width: 250px; /* Fixed width for consistency */
   height: 350px; /* Fixed height for consistency */
 }
 
@@ -137,10 +137,20 @@ ul > li:hover .dropdown-content {
     display: none; /* Hide the menu by default */
     flex-direction: column;
     width: 100%;
+    align-items: center; /* Center items horizontally */
   }
 
   .navbar ul.show {
     display: flex; /* Show when hamburger is clicked */
+  }
+
+  .navbar ul > li {
+    width: 100%; /* Make each button take full width */
+    text-align: center; /* Center text in buttons */
+  }
+
+  .navbar ul > li > button {
+    width: 100%; /* Make buttons take full width */
   }
 
   .hamburger {
